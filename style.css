@@ -1,62 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Fredoka:wght@300&display=swap');
 
-* {
-    box-sizing: border-box;
-    background-color: rgb(32, 29, 29);
- 
-  }
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
 
-  h2{
-    font-family: 'Abril Fatface', cursive;
-    letter-spacing: 5px;
-    font-size: 35px;
-    color: white;
-    text-align:center;
-    padding: 15px;
-    background-color: rgba(10,23,55,0.0);    
-  }
-  
-  div{
-    background-image: linear-gradient(to right, #00C7FF, #007CFF);
-    border-radius: 18px;
-  }
-  
-  ul{
-    margin:0;
-    padding: 0;    
-  }
+h2 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
 
-  ul li{
-    margin-top: 10px;
-    font-family: 'Caveat', cursive;
-    font-size: 30px;
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 8px;
-    background: #eee;
-    transition: 0.2s;
-    list-style: none;
-    border-radius: 18px;
-  }
+.input {
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
 
-  /*para fazer o efeito listra de zebra*/
-  ul li:nth-child(odd) {
-    background: #b6b2b2;
-  }
+.header{
+  width: 350px;
+  height: 480px;
+  background-color: aquamarine;
+}
+.addBtn{
+  font-family: 'Comfortaa', cursive;
+  color: white;
+  background-color: rgb(51, 149, 206);
+  border-radius: 0.4rem;
+  padding:6.5px 0px;
+  margin-top: 5px;
+  width: 150px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;  
+}
+div {
+  background-color: rgba(10, 23, 55, 0.0);
+  border-radius: 18px;
+}
 
-  /*mudar a cor no hover*/
-  ul li:hover{
-    background: #ddd;
-  }
+ul {
+  margin: 0;
+  padding: 0;
+}
 
-  input{
-    font-size: 35px;
-    background-color: rgba(10,23,55,0.0);
-    color: white;
-    outline:none;
-  }
+ul li {
+  margin-top: 10px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 30px;
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 8px;
+  background: #eee;
+  transition: 0.2s;
+  list-style: none;
+  border-radius: 18px;
+}
 
-  ::placeholder{
-    outline: none;
-    color:rgba(255,255,255,0.8);
-  }
+/*para fazer o efeito listra de zebra*/
+ul li:nth-child(odd) {
+  background: #b6b2b2;
+}
 
+/*mudar a cor no hover*/
+ul li:hover {
+  background: #ddd;
+}
+
+::placeholder {
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+}

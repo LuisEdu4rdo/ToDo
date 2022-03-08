@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo</title>
-    <link href="./css/style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
+    <h2>To-do List</h2>
     <div id="AddTask" class="header">
-        <h2>To Do List</h2>
-        <div id="inputAdd">
+        <div class="input" id="inputAdd">
             <input type="text" id="inputTask" placeholder="Tarefa...">
             <span onclick="newElement()" class="addBtn">Adicionar</span>
         </div>
+
+
+        <ul id="myUL">
+
+        </ul>
     </div>
-    <ul id="myUL">
-        
-    </ul>
 </body>
-<script src="./JS/script.js"></script>
+
 </html>
