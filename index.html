@@ -5,23 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo</title>
     <link href="style.css" rel="stylesheet">
     <script src="script.js" defer></script>
+    <title>ToDo</title>
 </head>
 
 <body>
-    <h2>To-do List</h2>
-    <div id="AddTask" class="header">
-        <div class="input" id="inputAdd">
-            <input type="text" id="inputTask" placeholder="Tarefa...">
-            <span onclick="newElement()" class="addBtn">Adicionar</span>
+    <div class="toDo">
+        <div id="titulo">
+            <h2>To-do List</h2>
         </div>
 
-
-        <ul id="myUL">
-
-        </ul>
+        <label class="toDoItem">
+            <input type="checkbox">
+            <div>Qualquer trem</div>
+            <input type="button" value="X">
+        </label>
+    </div>
+    
+    <div class="addNovoItem">
+        <input type="text" placeholder="Adicione uma nova tarefa">
     </div>
 </body>
 
