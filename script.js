@@ -5,13 +5,13 @@ var banco = [
     { 'tarefa': 'alfafa', 'status': '' },
 ];
 
-const criarItem = (tarefa, status) => {
+const criarItem = (tarefa, status, indice) => {
     const item = document.createElement("label");
     item.classList.add("todoItem");
     item.innerHTML = `
-        <input type="checkbox" ${status}>
+        <input type="checkbox" ${status} data-indice= ${indice}>
         <div>${tarefa}</div>
-        <input type="button" value="X">
+        <input type="button" value="X" data-indice= ${indice}>
         `
     document.getElementById("todoList").appendChild(item);
 }
@@ -25,7 +25,7 @@ const limparTarefa = () => {
 
 const atualizarTela = () => {
     limparTarefa();
-    banco.forEach(item => criarItem(item.tarefa, item.status));
+    banco.forEach( (item , indice) => criarItem(item.tarefa, item.status, indice));
 }
 
 const addNovoItem = (evento) => {
@@ -42,7 +42,28 @@ const addNovoItem = (evento) => {
         limparTexto();
     }
 }
+const removerItem = (indice) => {
+    banco.splice(indice, 1);
+    atualizarTela();
+}
+
+const atualizarItem = (indice) => {
+     banco[indice].status = banco[indice].status === '' ? 'checked' : '';
+     atualizarTela(); 
+}
+
+const clickItem = (evento) => {
+    const elemento = evento.target;
+    if(elemento.type === "button"){
+        const indice = elemento.dataset.indice;
+        removerItem(indice);
+    } else if(elemento.type === 'checkbox') {
+        const indice = elemento.dataset.indice;
+        atualizarItem(indice);
+    }
+}
 
 document.getElementById('addNovoItem').addEventListener('keypress', addNovoItem);
+document.getElementById('todoList').addEventListener('click', clickItem);
 
 atualizarTela(); 
