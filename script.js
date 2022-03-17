@@ -3,10 +3,10 @@
 //Refatorar o codigo!  
 
 
-const getBanco = () => JSON.parse(localStorage.getItem('todoList')) ?? [];
+const getBanco = () => JSON.parse(localStorage.getItem('list')) ?? [];
 var banco = getBanco();
 
-const setBanco = (banco) => localStorage.setItem('todoList', JSON.stringify(banco));
+const setBanco = (banco) => localStorage.setItem('list', JSON.stringify(banco));
 
 const criarItem = (tarefa, status, indice) => {
     const item = document.createElement("label");
