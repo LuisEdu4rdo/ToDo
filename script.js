@@ -1,9 +1,12 @@
 
-var banco = [
-    { 'tarefa': 'assistir jogo do vasco', 'status': 'checked' },
-    { 'tarefa': 'tomar um sorvetinho do bão', 'status': '' },
-    { 'tarefa': 'alfafa', 'status': '' },
-];
+//Tudo funcionando! 
+//Refatorar o codigo!  
+
+
+const getBanco = () => JSON.parse(localStorage.getItem('todoList')) ?? [];
+var banco = getBanco();
+
+const setBanco = (banco) => localStorage.setItem('todoList', JSON.stringify(banco));
 
 const criarItem = (tarefa, status, indice) => {
     const item = document.createElement("label");
@@ -25,7 +28,7 @@ const limparTarefa = () => {
 
 const atualizarTela = () => {
     limparTarefa();
-    banco.forEach( (item , indice) => criarItem(item.tarefa, item.status, indice));
+    banco.forEach((item, indice) => criarItem(item.tarefa, item.status, indice));
 }
 
 const addNovoItem = (evento) => {
@@ -38,26 +41,34 @@ const addNovoItem = (evento) => {
 
     if (tecla === 'Enter') {
         banco.push({ 'tarefa': texto, 'status': '' });
+        setBanco(banco);
         atualizarTela();
         limparTexto();
     }
 }
+
 const removerItem = (indice) => {
     banco.splice(indice, 1);
+    setBanco(banco);
     atualizarTela();
 }
 
 const atualizarItem = (indice) => {
-     banco[indice].status = banco[indice].status === '' ? 'checked' : '';
-     atualizarTela(); 
+    if (banco[indice].status === '') {
+        banco[indice].status = 'checked';
+    } else {
+        banco[indice].status = '';
+    }
+    setBanco(banco);
+    atualizarTela();
 }
 
 const clickItem = (evento) => {
     const elemento = evento.target;
-    if(elemento.type === "button"){
+    if (elemento.type === "button") {
         const indice = elemento.dataset.indice;
         removerItem(indice);
-    } else if(elemento.type === 'checkbox') {
+    } else if (elemento.type === 'checkbox') {
         const indice = elemento.dataset.indice;
         atualizarItem(indice);
     }
@@ -66,4 +77,4 @@ const clickItem = (evento) => {
 document.getElementById('addNovoItem').addEventListener('keypress', addNovoItem);
 document.getElementById('todoList').addEventListener('click', clickItem);
 
-atualizarTela(); 
+atualizarTela();  
