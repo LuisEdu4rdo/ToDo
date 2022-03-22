@@ -1,7 +1,5 @@
-
 //Tudo funcionando! 
 //Refatorar o codigo!  
-
 
 const getBanco = () => JSON.parse(localStorage.getItem('list')) ?? [];
 var banco = getBanco();
@@ -13,7 +11,7 @@ const criarItem = (tarefa, status, indice) => {
     item.classList.add("todoItem");
     item.innerHTML = `
         <input type="checkbox" ${status} data-indice= ${indice}>
-        <div>${tarefa}</div>
+        <div class="itemValue">${tarefa}</div>
         <input type="button" value="X" data-indice= ${indice}>
         `
     document.getElementById("todoList").appendChild(item);
