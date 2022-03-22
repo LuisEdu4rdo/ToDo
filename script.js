@@ -1,4 +1,3 @@
-//Tudo funcionando! 
 //Refatorar o codigo!  
 
 const getBanco = () => JSON.parse(localStorage.getItem('list')) ?? [];
